@@ -8,7 +8,7 @@ Within a folder with two fastqs in the format \*\_R1_001.fastq and \*\_R2_001.fa
 primal_align.sh ref.fasta output_name ref.bed
 ```
 
-This will create a raw and primer clipped bam file:
+This will create a raw and primer clipped bam file (plus indexes):
 
 ```
 output_name.bam
@@ -16,4 +16,10 @@ output_name.bam
 output.primerclipped.bam
 ```
 
-Uploaded the nCoV reference and primer bed file based on [V1 of artic nCoV-2019 primers](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V1)
+I have included the nCoV reference and primer bed file based on [V1 of artic nCoV-2019 primers](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V1)
+
+```
+./primal_align.sh MN908947.fasta output_name MN908947_bed.txt
+```
+
+
