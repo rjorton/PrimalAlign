@@ -33,6 +33,7 @@ do
         fi
 done
 
+bwa index $1
 bwa mem -t 10 $1 $T1 $T2 > $2.sam 2> bwa_mem_out.txt
 
 #get rid of unmapped and secondary/supplementary alignments
