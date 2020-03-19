@@ -1,6 +1,6 @@
 # PrimalAlign
 
-Very very simple script to trim reads with trim_galore, align with bwa, sam to bam filtering out supplementary and additional alignments and primer-clip reads post alignment using [bamclipper](https://github.com/tommyau/bamclipper). NB: it points to the bamclipper in my home directory on alpha.
+Very very simple script to trim reads with trim_galore, align with bwa, sam to bam filtering out supplementary and additional alignments and primer-clip reads post alignment using [bamclipper](https://github.com/tommyau/bamclipper). NB: it is hardcoded to point to the bamclipper in my home directory on alpha.
 
 Within a folder with two fastqs in the format \*\_R1_001.fastq and \*\_R2_001.fastq (it will find those fatsq's automatically) provide the reference path/name, the stub for output names, and the bed file of primer locations with respect to the reference.
 
