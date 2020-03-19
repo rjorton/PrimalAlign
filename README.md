@@ -16,7 +16,7 @@ output_name.bam
 output.primerclipped.bam
 ```
 
-I have included the nCoV reference and primer bed file based on [V1 of artic nCoV-2019 primers](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V1)
+I have included the nCoV reference and primer BEDPE file based on [V1 of artic nCoV-2019 primers](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V1)
 
 ```
 bash primal_align.sh MN908947.fasta output_name MN908947_bed.txt
