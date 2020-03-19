@@ -13,7 +13,7 @@ This will create a raw and primer clipped bam file (plus indexes):
 ```
 output_name.bam
 
-output.primerclipped.bam
+output_name.primerclipped.bam
 ```
 
 I have included the nCoV reference and primer BEDPE file based on [V1 of artic nCoV-2019 primers](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V1)
