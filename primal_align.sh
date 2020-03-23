@@ -45,4 +45,9 @@ mv $2_sort.bam $2.bam
 samtools index $2.bam
 rm -f $2.sam
 
-~orto01r/alicTest/bamclipper-master/bamclipper.sh -b ${2}.bam -p $3 -s ~orto01r/alicTest/samtools-1.3.1/samtools -n 10
+#by default -u=1 and -d=5, these should be tweaked to capture incomplete primers in the read
+#the -d considers incomplete primers i.e. if primer is 1->20, and the read start at 10, would be ignored by default as 10>d=5
+#so if primers are say 30bp (and amplicons not close) then try -d=30 or even -d=40
+#the -u captures reads that go past the primer, say primer is 50->70 and read starts at 40 - can get rid if the 40-50 section with -u=10
+#play with -u and -d, ensure no chance of confusing amplicons
+~orto01r/alicTest/bamclipper-master/bamclipper.sh -u 1 -d 5 -b ${2}.bam -p $3 -s ~orto01r/alicTest/samtools-1.3.1/samtools -n 10
