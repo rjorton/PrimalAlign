@@ -28,7 +28,7 @@ This will run primal align on each sample. To run primal align on a single sampl
 primal_align.sh
 ```
 
-This is run:
+This will run:
 * trim_galore: quality 20 and length 50
 * bwa mem
 * remove primers using ivar
@@ -48,7 +48,7 @@ Which has the following info:
 * Number of trimmed reads (reads not pairs) - number and as a % of raw
 * Number of reads mapping to BAM - number and as a % of raw
 * Number of reads mapping to primer trimmed/clipped BAM - number and as a % of raw
-* Average coverage extracted from weeSAM output
+* Average coverage extracted from [weeSAM](https://github.com/centre-for-virus-research/weeSAM) output
 
 This is hard coded to run on alpha and hard coded for the covid-19 ref MN908947.fasta and artic v1 primers nCoV-2019-v1.bed to keep it minimal, will add an option to change to V2/V3 primers in a second.
 
