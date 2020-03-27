@@ -1,7 +1,7 @@
 # PrimalAlign
 Simple script to trim (trim_galore), align (bwa), primer trim (ivar) and conseus call (ivar) a sample. This is a basically a hard coded adaptation of [valvs](https://github.com/ZackBoyd123/valvs) for covid19.
 
-If starting from a folder of FASTQs from multiple samples i.e. an illumina run, with the reads in the format:
+If starting from a folder of (unzipped) FASTQs from multiple samples i.e. an Illumina run, with the reads in the format:
 
 ```
 CVR01_S1_R1_0001.fastq
@@ -16,7 +16,7 @@ First run setup_primal_align.sh to create a folder for each sample and move each
 setup_primal_align.sh
 ```
 
-Then to run primal_align.sh over each sample it's folder, run loop_primal_align.sh:
+Then to run Primal Align over each sample it's folder, run loop_primal_align.sh:
 
 ```
 loop_primal_align.sh
