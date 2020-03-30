@@ -35,6 +35,31 @@ else
 	echo ""
 fi
 
+
+primerV=${1}
+
+if [[ -z ${primerV} ]];
+then
+	primerV=/home4/nCov/Richard/Ref/nCoV-2019-v1.bed
+	echo "No primers defined so using V1 primers by default: ${primerV}"
+elif [[ ${1} == "V1" || ${1} == "v1" || ${1} == "1" ]];
+then
+        primerV=/home4/nCov/Richard/Ref/nCoV-2019-v1.bed
+        echo "Using V1 primers: ${primerV}"
+elif [[ ${1} == "V2" || ${1} == "v2" || ${1} == "2" ]];
+then
+        primerV=/home4/nCov/Richard/Ref/nCoV-2019-v2.bed
+        echo "Using V2 primers: ${primerV}"
+elif [[ ${1} == "V3" || ${1} == "v3" || ${1} == "3" ]];
+then
+        primerV=/home4/nCov/Richard/Ref/nCoV-2019-v3.bed
+        echo "Using V3 primers: ${primerV}"
+else
+	echo "Unrecognised primers: ${1}"
+	echo "Exiting"
+	exit 1
+fi
+
 log=${sample}_primal_log.txt
 rm -f ${log}
 touch ${log}
@@ -79,7 +104,7 @@ mappedReads=$(samtools view -c -F4 -F256 -F2048 ${sample}.bam)
 mapProp=`echo "$mappedReads $rawReads" | awk '{printf "%.2f", $1/$2*100}'`
 echo "${mapProp}% = ${mappedReads} = mapped reads [primer untrimmed BAM]" >> ${log}
 
-ivar trim -i ${sample}.bam -p ${sample}_trim -b /home4/nCov/Richard/Ref/nCoV-2019-v1.bed 
+ivar trim -i ${sample}.bam -p ${sample}_trim -b ${primerV} 
 samtools sort -@10 ${sample}_trim.bam -o ${sample}_trim_sort.bam
 mv ${sample}_trim_sort.bam ${sample}_trim.bam
 samtools index ${sample}_trim.bam
