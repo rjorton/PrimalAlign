@@ -22,10 +22,22 @@ Then to run Primal Align over each sample it's folder, run loop_primal_align.sh:
 loop_primal_align.sh
 ```
 
+By deafult it will use the V1 primers, to use other primers (e.g. V2 or V3) provide this as an argument to the script:
+
+```
+loop_primal_align.sh V2
+```
+
 This will run primal align on each sample. To run primal align on a single sample, move into a folder which has paired end FASTQs in the format _R1_0001.fastq and _R2_0001.fastq and type:
 
 ```
 primal_align.sh
+```
+
+By deafult it will use the V1 primers, to use other primers (e.g. V2 or V3) provide this as an argument to the script:
+
+```
+primal_align.sh V2
 ```
 
 This will run:
