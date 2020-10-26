@@ -1,6 +1,10 @@
 # PrimalAlign
 Simple script to trim (trim_galore), align (bwa), primer trim (ivar) and conseus call (ivar) a sample. This is a basically a hard coded adaptation of [valvs](https://github.com/ZackBoyd123/valvs) for covid19.
 
+This is a simple script (that uses existing tools)and should not be used as a shortcut in the methods of a paper to represent methodology used. You should use the sentence:
+
+"For illumina reads, reads were trimmed with trim_galore (bioinformatics.babraham.ac.uk/projects/trim_galore/) and mapped with BWA {Li,2009} to the Wuhan-Hu-1 reference sequence, followed by primer trimming and consensus calling with iVar {Grubaugh,2019}.  A read coverage of least 10 was used for the consensus."
+
 If starting from a folder of (unzipped) FASTQs from multiple samples i.e. an Illumina run, with the reads in the format:
 
 ```
