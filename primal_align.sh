@@ -119,6 +119,6 @@ echo "${trimMapProp}% = ${trimMappedReads} = mapped reads [primer trimmed BAM]" 
 avcov=`(tail -n1 ${sample}_trim_weesam.txt | cut -f 8)`
 echo "${avcov} = average coverage [primer trimmed BAM]" >> ${log}
 
-samtools mpileup -B -A -d 1000000 -Q 0 ${sample}_trim.bam | ivar consensus -p ${sample}_trim_ivar_consensus -n N -t 0.6 -m 10
+samtools mpileup -B -A -aa -d 1000000 -Q 0 ${sample}_trim.bam | ivar consensus -p ${sample}_trim_ivar_consensus -n N -t 0.6 -m 10
 echo "${sample}_trim_ivar_consensus.fa = ivar consensus sequence" >> ${log}
 
