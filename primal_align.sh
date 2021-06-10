@@ -3,9 +3,8 @@
 #hardcoded for use on alpa
 #hardcoded for already bwa indexed ref
 #hardcoded for ref MN908947.fasta
-#hardcoded for V1 primer bed nCoV-2019.scheme.ivar.bed
 #hardcoded for ten threads
-#for flexible options -> use valvs
+
 
 for fastq in *.fastq
 do
